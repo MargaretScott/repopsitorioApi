@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BootcampAres.DataAccsess.Contracts\BootcampAres.DataAccess.Contracts.csproj" />
+    <ProjectReference Include="..\BootcampAresApplicationContracts\BootcampAres.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

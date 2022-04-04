@@ -15,13 +15,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Application", "2-Applicat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Business", "3-Business", "{1E448B91-BDA2-4BAB-A4B9-B1AB57070BFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BootcampAresApplication", "BootcampAresApplication\BootcampAresApplication.csproj", "{F1F014CA-ACE4-406D-BE39-75478B948BAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BootcampAres.Application", "BootcampAresApplication\BootcampAres.Application.csproj", "{F1F014CA-ACE4-406D-BE39-75478B948BAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BootcampAresApplicationContracts", "BootcampAresApplicationContracts\BootcampAresApplicationContracts.csproj", "{E9F82341-6358-45A9-8F06-57122B7312CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BootcampAres.Application.Contracts", "BootcampAresApplicationContracts\BootcampAres.Application.Contracts.csproj", "{E9F82341-6358-45A9-8F06-57122B7312CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BootcampAres.BusinessModels", "BootcampAres.BusinessModels\BootcampAres.BusinessModels.csproj", "{D10D4F0F-B499-45C3-B0DA-173F18DD6FD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BootcampAres.BusinessModels", "BootcampAres.BusinessModels\BootcampAres.BusinessModels.csproj", "{D10D4F0F-B499-45C3-B0DA-173F18DD6FD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BootcampAres.DataAccsess.Contracts", "BootcampAres.DataAccsess.Contracts\BootcampAres.DataAccsess.Contracts.csproj", "{782530D5-124F-4EB8-BDFB-1975680CABCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BootcampAres.DataAccess.Contracts", "BootcampAres.DataAccsess.Contracts\BootcampAres.DataAccess.Contracts.csproj", "{782530D5-124F-4EB8-BDFB-1975680CABCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -17,11 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\BootcampAres.DataAccess\BootcampAres.DataAccess.csproj" />
+    <ProjectReference Include="..\BootcampAresApplication\BootcampAres.Application.csproj" />
   </ItemGroup>
 
 </Project>

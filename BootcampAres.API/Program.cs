@@ -1,11 +1,17 @@
 using BootcampAres.DataAccess;
-using BootcampAres.DataAccsess.Contracts;
+using BootcampAres.DataAccess.Contracts;
+using BootcampAres.DataAccess.Contracts.Repositories;
+using BootcampAres.DataAccess.Repositories;
 using Microsoft.EntityFrameworkCore;
+using BootcampAres.Application.Services;
+using BootcampAres.Application.Contracts.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+builder.Services.AddTransient<IProductRepository, ProductRepository>();
+builder.Services.AddTransient<IProductService, ProductService>();
 
 string mySqlConnectionStr = builder.Configuration.GetConnectionString("DefaultConnection");
 

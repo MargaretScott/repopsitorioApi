@@ -1,4 +1,4 @@
-﻿using BootcampAres.DataAccsess.Contracts;
+﻿using BootcampAres.DataAccess.Contracts;
 
 namespace BootcampAres.DataAccess
 {

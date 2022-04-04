@@ -1,4 +1,4 @@
-﻿namespace BootcampAres.DataAccsess.Contracts
+﻿namespace BootcampAres.DataAccess.Contracts
 {
     public interface IUnitOfWork
     {

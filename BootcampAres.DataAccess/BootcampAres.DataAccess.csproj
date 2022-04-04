@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BootcampAres.DataAccsess.Contracts\BootcampAres.DataAccsess.Contracts.csproj" />
+    <ProjectReference Include="..\BootcampAres.DataAccsess.Contracts\BootcampAres.DataAccess.Contracts.csproj" />
   </ItemGroup>
 
 </Project>
