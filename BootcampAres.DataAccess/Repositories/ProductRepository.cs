@@ -33,5 +33,21 @@ namespace BootcampAres.DataAccess.Repositories
 
             return query.FirstOrDefault();
         }
+        public ProductDto AddProduct(ProductDto product)
+        {
+            Product newproduct = new Product
+            {
+                BuyPrice = product.BuyPrice,
+                Msrp = product.Msrp,
+                ProductCode = product.ProductCode,
+                ProductDescription = product.ProductDescription,
+                ProductLine = product.ProductLine,
+                ProductName = product.ProductName,
+                ProductScale = product.ProductScale,
+                ProductVendor = product.ProductVendor,
+                QuantityInStock = product.QuantityInStock,
+            };
+        }
     }
+   
 }
