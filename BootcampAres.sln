@@ -23,6 +23,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BootcampAres.BusinessModels
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BootcampAres.DataAccess.Contracts", "BootcampAres.DataAccsess.Contracts\BootcampAres.DataAccess.Contracts.csproj", "{782530D5-124F-4EB8-BDFB-1975680CABCE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-Cross Cutting", "5-Cross Cutting", "{6737845C-3785-40A7-A52E-8536311F02BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BootcampAresCrossCutting", "BootcampAresCrossCutting\BootcampAresCrossCutting.csproj", "{D3B2600E-AA98-4432-9DFB-01F3127517DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +57,10 @@ Global
 		{782530D5-124F-4EB8-BDFB-1975680CABCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{782530D5-124F-4EB8-BDFB-1975680CABCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{782530D5-124F-4EB8-BDFB-1975680CABCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3B2600E-AA98-4432-9DFB-01F3127517DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3B2600E-AA98-4432-9DFB-01F3127517DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3B2600E-AA98-4432-9DFB-01F3127517DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3B2600E-AA98-4432-9DFB-01F3127517DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +72,7 @@ Global
 		{E9F82341-6358-45A9-8F06-57122B7312CF} = {D4C65BE8-76A1-4AE1-903C-34F11D3F824E}
 		{D10D4F0F-B499-45C3-B0DA-173F18DD6FD1} = {1E448B91-BDA2-4BAB-A4B9-B1AB57070BFC}
 		{782530D5-124F-4EB8-BDFB-1975680CABCE} = {5F163ADC-50D5-4105-B15C-1F0FDE5812CC}
+		{D3B2600E-AA98-4432-9DFB-01F3127517DC} = {6737845C-3785-40A7-A52E-8536311F02BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {486B09CB-B4FD-4A8C-823A-6698BA84A6A6}

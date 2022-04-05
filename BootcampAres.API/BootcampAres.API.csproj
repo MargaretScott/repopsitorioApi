@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BootcampAres.DataAccess\BootcampAres.DataAccess.csproj" />
-    <ProjectReference Include="..\BootcampAresApplication\BootcampAres.Application.csproj" />
+    <ProjectReference Include="..\BootcampAresCrossCutting\BootcampAresCrossCutting.csproj" />
   </ItemGroup>
 
 </Project>

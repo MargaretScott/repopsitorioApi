@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace BootcampAres.DataAccess
+﻿namespace BootcampAres.DataAccess.Contracts.Entities
 {
-    public partial class Customer
+    public class CustomerDto
     {
-        
-        public Customer()
-        {
-            Orders = new HashSet<Order>();
-            Payments = new HashSet<Payment>();
-        }
-
         public int CustomerNumber { get; set; }
         public string CustomerName { get; set; } = null!;
         public string ContactLastName { get; set; } = null!;
@@ -25,9 +15,5 @@ namespace BootcampAres.DataAccess
         public string Country { get; set; } = null!;
         public int? SalesRepEmployeeNumber { get; set; }
         public decimal? CreditLimit { get; set; }
-
-        public virtual Employee? SalesRepEmployeeNumberNavigation { get; set; }
-        public virtual ICollection<Order> Orders { get; set; }
-        public virtual ICollection<Payment> Payments { get; set; }
     }
 }
