@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CursoDotNet.Application.BusinessModels\CursoDotNet.Application.BusinessModels.csproj" />
+    <ProjectReference Include="..\CursoDotNet.Application.DataAccess.Contracts\CursoDotNet.DataAccess.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

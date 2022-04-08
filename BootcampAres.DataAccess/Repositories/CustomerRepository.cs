@@ -1,5 +1,6 @@
 ﻿using BootcampAres.DataAccess.Contracts.Entities;
 using BootcampAres.DataAccess.Contracts.Repositories;
+using BootcampAres.DataAccess.Mappers;
 
 namespace BootcampAres.DataAccess.Repositories
 {
@@ -12,31 +13,43 @@ namespace BootcampAres.DataAccess.Repositories
             _context = context;
         }
 
-        public CustomerDto? GetCustomerById(int customerNumber)
+        public CustomerDto? GetCustomerByNumber(int number)
         {
             var query =
-                 from customer in _context.Customers
-                 where customer.CustomerNumber == customerNumber
-                 select new CustomerDto
-                 {
-                     AddressLine1 = customer.AddressLine1,
-                     AddressLine2 = customer.AddressLine2,
-                     City = customer.City,
-                     ContactFirstName = customer.ContactFirstName,
-                     ContactLastName = customer.ContactLastName,
-                     Country = customer.Country,
-                     CreditLimit = customer.CreditLimit,
-                     CustomerName = customer.CustomerName,
-                     CustomerNumber = customer.CustomerNumber,
-                     PostalCode = customer.PostalCode,
-                     Phone = customer.Phone,
-                     SalesRepEmployeeNumber = customer.SalesRepEmployeeNumber,
-                     State = customer.State,
-                 };
+                from c in _context.Customers
+                where c.CustomerNumber == number
+                select CustomerMapper.MapToCustomerDtoFromCustomer(c);
 
             return query.FirstOrDefault();
-         }
+        }
 
-       
+        public CustomerDto AddCustomer(CustomerDto customer)
+        {
+            Customer newCustomer = CustomerMapper.MapToCustomerFromCustomerDto(customer);
+
+            var customerAdded = _context.Customers.Add(newCustomer);
+
+            CustomerDto result = CustomerMapper.MapToCustomerDtoFromCustomer(customerAdded.Entity);
+
+            return result;
+        }
+
+        public void DeleteCustomer(CustomerDto customer)
+        {
+            Customer customerToDelete = CustomerMapper.MapToCustomerFromCustomerDto(customer);
+
+            _context.Customers.Remove(customerToDelete);
+        }
+
+        public CustomerDto UpdateCustomer(CustomerDto customer)
+        {
+            Customer customerToUpdate = CustomerMapper.MapToCustomerFromCustomerDto(customer);
+
+            var productUpdated = _context.Customers.Update(customerToUpdate);
+
+            CustomerDto result = CustomerMapper.MapToCustomerDtoFromCustomer(productUpdated.Entity);
+
+            return result;
+        }
     }
 }

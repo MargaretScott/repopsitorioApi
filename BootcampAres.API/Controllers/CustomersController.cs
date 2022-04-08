@@ -14,15 +14,23 @@ namespace BootcampAres.API.Controllers
         {
             _customerService = customerService;
         }
+
         [HttpGet]
-        [Route("{code}")]
-        public IActionResult GetCustomerByCode(int code)
+        [Route("{number}")]
+        [ProducesResponseType(typeof(CustomerResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public IActionResult GetCustomerByNumber(int number)
         {
-            CustomerResponse? customer =
-                _customerService.GetCustomerByCode(code);
+            CustomerResponse? customer = _customerService.GetCustomerByNumber(number);
+
             if (customer != null)
             {
-                return Ok(customer);
+                if (string.IsNullOrEmpty(customer.Error))
+                    return Ok(customer);
+                else
+                    return BadRequest(customer.Error);
             }
             else
             {
@@ -30,9 +38,48 @@ namespace BootcampAres.API.Controllers
             }
         }
 
+        [HttpPost]
+        [ProducesResponseType(typeof(CustomerResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public IActionResult AddCustomer(CustomerRequest customer)
+        {
+            CustomerResponse newCustomer = _customerService.AddCustomer(customer);
 
+            if (string.IsNullOrEmpty(newCustomer.Error))
+                return Ok(newCustomer);
+            else
+                return BadRequest(newCustomer.Error);
+        }
 
+        [HttpDelete]
+        [Route("{number}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public IActionResult DeleteCustomer(int number)
+        {
+            bool result = _customerService.DeleteCustomer(number);
 
+            if (result)
+                return NoContent();
+            else
+                return BadRequest("El cliente no existe");
+        }
+
+        [HttpPut]
+        [Route("{number}")]
+        [ProducesResponseType(typeof(CustomerResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public IActionResult UpdateCustomer(int number, CustomerUpdateRequest customer)
+        {
+            CustomerResponse customerUpdated = _customerService.UpdateCustomer(number, customer);
+
+            if (string.IsNullOrEmpty(customerUpdated.Error))
+                return Ok(customerUpdated);
+            else
+                return BadRequest(customerUpdated.Error);
+        }
     }
-    
 }
